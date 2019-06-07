@@ -1,0 +1,142 @@
+
+/*
+INÍCIO PAFRÃO
+*/
+
+* {
+	margin: 0px;
+	padding: 0px;
+	font-size: 100%;
+	border: none;
+	outline: none;
+	box-sizing: border-box;
+	color: #FFFAFF;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+/*
+FIM INÍCIO PADRÃO
+*/
+
+/*
+CONFIGURAÇÕES INICIAIS
+*/
+
+.Inicio {
+	text-align: center;
+	margin-bottom: 0%;
+	background-color: #FFFAFF;
+	width: 100vw;
+	height: 100vh;
+	font-size: calc(10px + 2vmin);
+
+}
+
+/*
+FIM CONFIGURAÇÕES INICIAIS
+*/
+
+/*
+DIV MAIS A ESQUERDA DO SITE
+*/
+.Logo-esquerda{
+	position:relative;
+	width: 65%;
+	height: 100vh;
+	background-color: #1B9AAA;
+	float: left;
+
+	align-items: center;
+	justify-content: center;
+}
+
+img {
+	height: 150%;
+}
+
+.Logo {
+	position: relative;
+	top: 20%;
+	height: 20%;
+	font-size: calc(10px + 10vmin);
+	display: block;
+}
+
+#Subescrito{
+	font-size: calc(8px + 2vmin);
+}
+
+/*
+FIM DIV MAIS A ESQUERDA DO SITE
+*/
+
+/*
+DIV MAIS A DIREITA DO SITE
+*/
+.Logo-direita{
+	position: relative;
+	width: 35%;
+	height: 100vh;
+	left:0px;
+	background-color: #FFFAFF;
+	float: left;
+
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}
+
+.Formulario {
+	position: relative;
+	top: 10%;
+}
+
+.Login{
+	position: relative;
+	width: 85%;
+	height: 35vh;
+	border-radius: 30px;
+	background-color: #FFEBC8;
+}
+
+.Botao {
+	background-color: #D8315B;
+	height: calc(6px + 5vmin);
+	width: calc(25px + 20vmin);
+	border-radius: 30px;
+	margin: 8%;
+	cursor: pointer;
+}
+
+#nome, #senha {
+	border-radius: 30px;
+	margin: 2%;
+	height: calc(6px + 5vmin);
+	width: calc(20px + 40vmin);
+	padding-left: 20px;
+}
+
+
+
+input, select, textarea{
+    color: #13293D;
+}
+/*
+FIM DIV MAIS A DIREITA DO SITE
+*/
+
+
