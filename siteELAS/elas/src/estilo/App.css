@@ -1,8 +1,16 @@
+/* VARIÁVEIS */
+:root {
+	--rosa: #D8315B;
+	--branco: #FFFAFF;
+	--verde: #1B9AAA;
+	--cinza: #EFEFEF;
+	--amarelo: #FFEBC8;
+	--preto: #13293D;
+}
+/* FIM VARIÁVEIS */
 
-/*
-INÍCIO PAFRÃO
-*/
 
+/* INÍCIO PADRÃO */
 * {
 	margin: 0px;
 	padding: 0px;
@@ -10,11 +18,14 @@ INÍCIO PAFRÃO
 	border: none;
 	outline: none;
 	box-sizing: border-box;
-	color: #FFFAFF;
+	color: var(--branco);
 }
 
 a {
 	text-decoration: none;
+	font-size: calc(5px + 3vmin);
+
+	
 }
 
 ul {
@@ -23,39 +34,43 @@ ul {
 
 img {
 	max-width: 100%;
-	height: 150%;
+	width: 20%;
+	padding: 0%;
+	border: 0px;
+	margin: 0%;
+	
 }
 
-/*
-FIM INÍCIO PADRÃO
-*/
+h1 {
+	margin: 0px;
+	padding: 0px;
+}
+p {
+	color: var(--preto);
+}
 
-/*
-CONFIGURAÇÕES INICIAIS
-*/
+/* FIM INÍCIO PADRÃO */
+
+/* CONFIGURAÇÕES INICIAIS */
 
 .Inicio {
 	text-align: center;
 	margin-bottom: 0%;
-	background-color: #FFFAFF;
+	background-color: var(--branco);
 	width: 100vw;
 	height: 100vh;
 	font-size: calc(10px + 2vmin);
-
 }
 
-/*
-FIM CONFIGURAÇÕES INICIAIS
-*/
+/* FIM CONFIGURAÇÕES INICIAIS */
 
-/*
-DIV MAIS A ESQUERDA DO SITE
-*/
+/* DIV MAIS A ESQUERDA DO SITE */
+
 .Logo-esquerda{
 	position:relative;
-	width: 65%;
+	width: 65vw;
 	height: 100vh;
-	background-color: #1B9AAA;
+	background-color: var(--verde);
 	float: left;
 
 	align-items: center;
@@ -72,22 +87,20 @@ DIV MAIS A ESQUERDA DO SITE
 }
 
 #Subescrito{
+	color: var(--branco);
 	font-size: calc(8px + 2vmin);
 }
 
-/*
-FIM DIV MAIS A ESQUERDA DO SITE
-*/
+/* FIM DIV MAIS A ESQUERDA DO SITE */
 
-/*
-DIV MAIS A DIREITA DO SITE
-*/
+/* DIV MAIS A DIREITA DO SITE */
+
 .Logo-direita{
 	position: relative;
 	width: 35%;
 	height: 100vh;
 	left:0px;
-	background-color: #FFFAFF;
+	background-color: var(--branco);
 	float: left;
 
 	align-items: center;
@@ -108,16 +121,7 @@ DIV MAIS A DIREITA DO SITE
 	width: 85%;
 	height: 35vh;
 	border-radius: 30px;
-	background-color: #FFEBC8;
-}
-
-.Botao {
-	background-color: #D8315B;
-	height: calc(6px + 5vmin);
-	width: calc(25px + 20vmin);
-	border-radius: 30px;
-	margin: 8%;
-	cursor: pointer;
+	background-color: var(--amarelo);
 }
 
 #nome, #senha {
@@ -128,23 +132,23 @@ DIV MAIS A DIREITA DO SITE
 	padding-left: 20px;
 }
 
-
-
-input, select, textarea{
-    color: #13293D;
+.Botao {
+	height: calc(6px + 5vmin);
+    width: calc(25px + 20vmin);
 }
-/*
-FIM DIV MAIS A DIREITA DO SITE
-*/
+input, select, textarea{
+    color: var(--preto);
+}
+/* FIM DIV MAIS A DIREITA DO SITE */
 
 
-/* BARRA LATERAL */
+/* BARRA LATERAL - MENU */
 
 .Barra-Lateral{
-	position:relative;
+	position: fixed;;
 	width: 15%;
 	height: 100vh;
-	background-color: #1B9AAA;
+	background-color: var(--verde);
 	float: left;
 	font-size: calc(10px + 4vmin);
 	align-items: center;
@@ -153,27 +157,138 @@ FIM DIV MAIS A DIREITA DO SITE
 
 /* FIM BARRA LATERAL */
 
-#Texto-Escuro{
-	color: #13293D;
-}
+/* BARRA LATERAL - MENU */
 
-#Logo-Solicitar{
-	height: 10%;
-	margin: 0px;
+.Logo-Solicitar{
+	max-width: 100%;
+	width: 35%;
+	padding: 0%;
+	border: 0px;
+	margin: 0%;
 
 }
 
 #Subescrito-Solicitar {
-	font-size: calc(7px + 1vmin);
-}
-h1 {
-	margin: 0px;
-	padding: 0px;
+	color: var(--branco);
+	font-size: calc(6px + 1vmin);
 }
 
-.Logo-so{
-	position: relative;
-	top: 5%;
-	height: 100%;
-	display: block;
+.menu {
+	top: 2%;
 }
+
+.lista {
+	top: 8%;
+	width: 100%;
+}
+
+.config-top {
+	display: block;
+	position: relative;
+}
+
+.alinha-menu {
+	display: table-cell;
+	width: calc(100px + 20vmin);
+	height: calc(60px + 3vmin);
+	vertical-align: middle;
+}
+
+.colorido {
+	background-color: var(--rosa);
+}
+
+/* FIM BARRA LATERAL - MENU */
+
+/* ABA DIREITA DAS PÁGINAS */
+.Geral {
+	text-align: center;
+	margin-bottom: 0%;
+	background-color: var(--branco);
+	width: 100%;
+	height: 100%;
+	font-size: calc(10px + 2vmin);
+}
+
+.Direita{
+	position: relative;
+	width: 85%;
+	height: 100%;
+	left:0px;
+	float: right;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}
+
+/* FIM ABA DIREITA DAS PÁGINAS */
+
+/* EMPRÉSTIMOS SOLICITADOS */
+
+.Solicitacao{
+	top: 15%;
+	bottom: 10;
+	display: block;
+	position: relative;
+	width: 80%;
+	height: 150px;
+	margin: 10px;
+	border-radius: 30px;
+	background-color: var(--amarelo);
+	
+}
+.Info {
+	display: table-cell;
+
+	width: 60%;
+	height: 100%;
+
+	float: left;
+
+	text-align: left;
+	vertical-align: middle;
+	
+	padding: 20px;
+	font-size: 18px;
+}
+
+.Valores {
+	display: flex;
+	position: relative;
+	float: left;
+}
+.Informacoes{
+	display: flex;
+	position: relative;
+	float: left;
+
+	font-weight: bold;
+	color: var(--rosa);
+
+}
+.Confirmar {
+	display: table-cell;
+
+	position: relative;
+	float: right;
+	vertical-align: middle;
+	
+	width: 40%;
+	height: 100%;
+}
+
+.BotaoConfirmar {
+	width: 100%;
+	height: 50%;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+
+/* FIM EMPRÉSTIMOS SOLICITADOS */

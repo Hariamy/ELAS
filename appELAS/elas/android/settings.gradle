@@ -1,0 +1,3 @@
+rootProject.name = 'elas'
+
+include ':app'

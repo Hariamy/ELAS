@@ -2,8 +2,8 @@ import React from 'react';
 import '../../estilo/App.css';
 
 
-import Formulario from './components/formulario';
-import Logo from './components/logo';
+import Formulario from './formulario';
+import Logo from './logo';
 
 
 export default props => {
