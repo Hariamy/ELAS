@@ -11,15 +11,15 @@ const UsuarioSchema = new mongoose.Schema ({
 		required: true,
 	},
 	numero: {
-		type: String,
+		type: Number,
 		required: true,
 	},
 	cep: {
-		type: String,
+		type: Number,
 		required: true,
 	},
 	telefone: {
-		type: String,
+		type: Number,
 		required: true,
 	},
 	login: {
@@ -31,6 +31,16 @@ const UsuarioSchema = new mongoose.Schema ({
 		type: String,
 		required: true,
 	},
+
+	alugado: {
+		type: Array,
+		required: false,
+	},
+
+	multa: {
+		type: mongoose.Decimal128,
+		require: true,
+	}
 });
 
 UsuarioSchema.plugin(mongoosePaginate);

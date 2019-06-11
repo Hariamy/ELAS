@@ -9,6 +9,7 @@ const LivroController = require('./controllers/LivroController');
 
 routes.get('/usuarios', UsuarioController.index);
 routes.get('/usuarios/:id', UsuarioController.show);
+routes.get('/usuarios/login/:login', UsuarioController.showLogin);
 routes.post('/usuarios', UsuarioController.store);
 routes.put('/usuarios/:id', UsuarioController.update);
 routes.delete('/usuarios/:id', UsuarioController.destroy);

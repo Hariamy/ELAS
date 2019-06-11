@@ -16,6 +16,13 @@ module.exports = {
 		return res.json(usuario);
 	},
 
+	async showLogin(req, res) {
+		const usuario = await Usuario.findOne( {login: req.params.login} );
+
+		return res.json(usuario);
+	},
+
+
 	async store(req, res) {
 		const usuario = await Usuario.create(req.body);
 

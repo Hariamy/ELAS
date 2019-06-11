@@ -6,7 +6,7 @@ import api from '../services/api';
 import { styles } from '../estilo/estilo';
 
 
-export default class Main extends Component {
+export default class Livros extends Component {
 	static navigationOptions = {
 		title: "LIVROS"
 	};
