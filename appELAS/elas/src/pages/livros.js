@@ -8,7 +8,12 @@ import { styles } from '../estilo/estilo';
 
 export default class Livros extends Component {
 	static navigationOptions = {
-		title: "LIVROS"
+		title: "LIVROS",
+		headerTitleStyle: {
+			textAlign: 'right',
+			fontSize: 30
+		},
+		headerLeft: null,
 	};
 
 	state = {

@@ -9,7 +9,7 @@ const Informacoes = () => (
     <View style={infoEstilo.fundo}>
         <View style={infoEstilo.painelInterno}>
 
-            <Text style={infoEstilo.painelInternoFont}>Para solicitar uma conta dirija-se até o guichê para solicitar o cadastro no ELAS</Text>
+            <Text style={infoEstilo.painelInternoFont}>Dirija-se até o guichê para realizar o cadastro no aplicativo ELAS.</Text>
             <Text style={infoEstilo.painelInternoFont}r> </Text>
             <Text style={infoEstilo.painelInternoFont}r>Tenha em mãos: </Text>
             <Text style={infoEstilo.painelInternoFont}r>      Identidade </Text>

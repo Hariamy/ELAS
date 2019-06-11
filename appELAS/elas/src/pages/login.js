@@ -14,7 +14,6 @@ export default class Main extends Component {
     state = {
         login: '',
         senha: '',
-        usuario: []
     };
 
     setLogin(login) {
@@ -25,62 +24,26 @@ export default class Main extends Component {
         this.setState({senha})
     };
 
-    pegaUsuario = async (usuario) => {
+    pegaUsuario = async () => {
         const response = await api.get(`/usuarios/login/${this.state.login}`);
-        Alert.alert(
-            `${response}`,
-            
-            [
-                {text: 'CERTO', onPress: () => {
-                    this.props.navigation.navigate("Livros");}
-                }
-            ],
-            {cancelable: false}
-        )
-        this.setState ({
-            usuario: response.data,
-            login,
-            senha
-        })
-    };
-
-    presionaEntrar = async () => {
-     
-
-        if (this.state.login && this.state.senha) {
-            // CONSULTA API
-            this.pegaUsuario(this.state.login);
-
-            if (this.state.login === usuario.login) {
-                Alert.alert(
-                    "Seus dados pessoais",
-                    "Nome " + response.nome + " Rua " + response.rua,
-                    [
-                        {text: 'CERTO', onPress: () => {
-                            this.props.navigation.navigate("Livros");}
-                        }
-                    ],
-                    {cancelable: false}
-                )
-            } else {
-                Alert.alert(
-                    "Deu rum",
-                    [
-                        {text: 'CERTO', onPress: () => {
-                            this.props.navigation.navigate("Livros");}
-                        }
-                    ],
-                    {cancelable: false}
-                )
-            }
-            // VERIFICA SE SENHA === SENHA
-            // SE SIM VAI PRA OUTRA PÁGINA
-
-            
+        
+        if (response.data.senha === this.state.senha) {
+            this.props.navigation.navigate("Livros");
 
         } else {
-            Alert.alert("deu rum rapa")
+            Alert.alert(
+                "ERRO!",
+                "Usuário ou senha incorretos.",
+                [{text: 'OK', onPress: () => {}}],
+                {cancelable: false},
+            );
+        }
+    };
 
+    presionaEntrar(){
+        if (this.state.login && this.state.senha) {
+            // CONSULTA API
+            this.pegaUsuario();
         }
     };
 
