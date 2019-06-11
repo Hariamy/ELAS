@@ -9,11 +9,14 @@ app.use(express.json());
 app.use(cors());
 
 // Iniciando o DB
+ 
 mongoose.connect(
-	'mongodb://localhost:27017/apiELAS',  
-	{ useNewUrlParser: true }
-);
-
+	'mongodb+srv://hariamy:HARIAMY@clusterelas-oqljd.mongodb.net/test?retryWrites=true&w=majority ',  
+	{ useNewUrlParser: true },
+	function(err) {
+  		if (err) { return console.error(err);
+  	}
+}); 
 requireDir('./src/models');
 
 
