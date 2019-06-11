@@ -17,10 +17,10 @@ export const BotaoInicial = styled(Botao)`
 
 export const BotaoRosa = styled(Botao) `
     background-color: #D8315B;
-    margin: 8px;
+    margin: 10px;
 `;
 
 export const BotaoVerde = styled(Botao) `
     background-color: #1B9AAA;
-    margin: 8px;
+    margin: 10px;
 `;

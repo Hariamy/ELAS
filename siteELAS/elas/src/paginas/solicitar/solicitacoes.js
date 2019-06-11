@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../estilo/App.css';
 
-import Solicitacao from "./solicitacao"
+import Solicitacao from './solicitacao';
 
 export default props => {
 	return (
