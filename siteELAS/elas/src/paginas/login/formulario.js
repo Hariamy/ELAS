@@ -8,16 +8,16 @@ export default props => {
     <div className="Logo-direita">
         <div className="Login">
             <div className='Formulario'>
-                <form onSubmit={props.handleSubmit}>
+                <form onSubmit={props.loginSubmit}>
 
                     <input id='nome' type="text" 
                         placeholder='Login:'
-                        onChange={props.handleChangeName}
-                        value={props.name}></input>
+                        onChange={props.mudaUsuario}
+                        value={props.usuario}></input>
                     
                     <input id='senha' type="password"
                         placeholder='Senha:'
-                        onChange={props.handleChangeSenha}
+                        onChange={props.mudaSenha}
                         value={props.senha}></input>
                 
                     <BotaoInicial type="submit" value="Submit">ENTRAR</BotaoInicial>

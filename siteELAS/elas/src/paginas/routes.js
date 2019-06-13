@@ -1,5 +1,8 @@
 import React from 'react';
-import {Router, Route, Redirect, hashHistory} from 'react-router';
+//import {Router, Route, Redirect, hashHistory} from 'react-router';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+
+import { getAutenticado, autenticar } from '../conexaoApi/funcoesApi';
 
 import Login from './login/login';
 
@@ -14,7 +17,30 @@ import Livro from './livro/livro';
 
 import Configurar from './configurar/configurar';
 
+const PrivateRoute = ( { component: Component, ... rest }) => (
+    <Route
+        { ... rest }
+        render={ props => 
+            false ? (
+                <Component {... props} />
+            ) : (
+                <Redirect to={{ pathname: "/login", state: { from: props.location } }} />
+            )
+        }
+    />
+);
 
+const Routes = () => (
+    <BrowserRouter>
+        <Switch>
+            <Route exact path='/login' component={ Login }/>
+            <PrivateRoute path='/solicitar' component={ Solicitar }/>
+        </Switch>
+    </BrowserRouter>
+);
+
+export default Routes;
+/*
 export default props => (
     <Router history={hashHistory}>
         <Route path='login' component={Login}/>
@@ -27,3 +53,4 @@ export default props => (
         <Redirect from='*' to ='/login'/>
     </Router>
 )
+*/

@@ -3,6 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"author": "Hariamy Maciel Vasconcelos",
+	"proxy": "http://localhost:3001/api",
 	"dependencies": {
 		"react": "^16.8.6",
 		"react-dom": "^16.8.6",
