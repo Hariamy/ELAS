@@ -4,16 +4,26 @@ import '../../estilo/App.css';
 import Formulario from './formulario';
 import Logo from './logo';
 import { getUsers, getUser } from '../../conexaoApi/funcoesApi';
-import { autenticar } from '../../conexaoApi/funcoesApi'
+import { autenticacao } from '../../conexaoApi/funcoesApi'
+
+import { Redirect } from 'react-router-dom'
 
 class Login extends Component {
 	state = {
-		response: []
+		response: [],
+		botaoLogin: false,
+		usuario: '',
+		senha: '',
 	};
 
 	componentDidMount() {
-
-	  }
+		this.setState({
+			response: this.state.response,
+			botaoLogin: false,
+			usuario: this.state.usuario,
+			senha: this.state.senha
+		})
+	}
 	
 	callApi = async () => {
 		const response = await fetch(getUsers, { 
@@ -59,50 +69,49 @@ class Login extends Component {
 		return body.docs;
 	};
 
-	state = {
-        usuario: '',
-		senha: '',
-		autenticado: false
-    }
+
 
     mudaUsuario(e) {
-        this.setState({ usuario: e.target.value })
+        this.setState({ 
+			usuario: e.target.value,
+			response: this.state.response,
+			botaoLogin: false,
+			senha: this.state.senha
+		})
     }
     mudaSenha(e) {
-        this.setState({ senha: e.target.value })
+        this.setState({ 
+			senha: e.target.value,
+			response: this.state.response,
+			botaoLogin: false,
+			usuario: this.state.usuario,
+		})
     }
 
     async loginSubmit(e) {
-		console.log('ta dando o fetch')
-		const response = await fetch(getUser+this.state.login);
-	
-		const body = await response.json();
-		console.log(body.senha);
-	
-		if (body.senha === this.state.senha) {
-			this.setState({ autemticado: true })
-
-			console.log('login realizado vai pra página seguinte')
-			
-		} else {
-			this.setState({ autenticado: false})
-			console.log("Deu ruim ")
-		}
+		await autenticacao.autenticar(this.state.usuario, this.state.senha);
+		console.log(autenticacao.getStatus())
+		this.setState({ 
+			senha: this.state.senha,
+			response: this.state.response,
+			botaoLogin: true,
+			usuario: this.state.usuario,
+		})
 	}
-
-	autenticado = () => ( this.state.autenticado )
+	
 
 	render() {
-	  return (
-		<div className="Inicio">
-			<Logo/>
-			<Formulario
-				mudaSenha={this.mudaSenha.bind(this)}
-				mudaUsuario={this.mudaUsuario.bind(this)}
-				loginSubmit={this.loginSubmit.bind(this)}
-			/>
-		</div>
-	  )
+		if (autenticacao.getStatus() && this.state.botaoLogin) return <Redirect from='/login' to ='/solicitar'/>
+		return (
+			<div className="Inicio">
+				<Logo/>
+				<Formulario
+					mudaSenha={this.mudaSenha.bind(this)}
+					mudaUsuario={this.mudaUsuario.bind(this)}
+					loginSubmit={this.loginSubmit.bind(this)}
+				/>
+			</div>
+		)
 	}
 }
 

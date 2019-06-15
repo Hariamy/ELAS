@@ -11,11 +11,11 @@ const LivroSchema = new mongoose.Schema ({
 		required: true,
 	},
 	editora: {
-		type: Number,
+		type: String,
 		required: true,
 	},
 	edicao: {
-		type: Array,
+		type: Number,
 		required: true,
 	},
 	cdd: {

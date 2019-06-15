@@ -6,11 +6,11 @@ export default props => {
 	return (
 		<div> 
             <div className="BotaoInserir">
-                <BotaoRosa type="submit" value="Submit">INSERIR</BotaoRosa>
+                <BotaoRosa onClick={props.botaoRosa}>INSERIR</BotaoRosa>
             </div>
         
             <div className="BotaoInserir">
-                <BotaoVerde type="submit" value="Submit">BUSCAR</BotaoVerde>
+                <BotaoVerde onClick={props.botaoVerde}>BUSCAR</BotaoVerde>
             </div>
 		</div>
 	);

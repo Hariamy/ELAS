@@ -99,7 +99,7 @@ p {
 	position: relative;
 	width: 35%;
 	height: 100vh;
-	left:0px;
+	left: 0px;
 	background-color: var(--branco);
 	float: left;
 
@@ -192,6 +192,7 @@ input, select, textarea{
 	width: calc(100px + 20vmin);
 	height: calc(60px + 3vmin);
 	vertical-align: middle;
+	padding: 10px;
 }
 
 .colorido {
@@ -341,7 +342,7 @@ input, select, textarea{
 /* USUÁRIOS */
 .BotaoInserir {
 	width: 50%;
-	height: 50%;
+	height: 20px;
 	display: -webkit-flex;
 	display: flex;
 	float: left;
@@ -366,10 +367,80 @@ input, select, textarea{
 	bottom: 10;
 	display: block;
 	position: relative;
-	width: 60%;
+	width: 600px;
 	height: 250px;
 	margin: 10px;
 	border-radius: 30px;
 	background-color: var(--amarelo);
 }
+
+.PainelInserirUsuario {
+	top: 10%;
+	bottom: 10;
+	display: block;
+	position: relative;
+	width: 600px;
+	height: 550px;
+	margin: 10px;
+	border-radius: 30px;
+	background-color: var(--amarelo);
+}
+
+.TituloInserirUsuario {
+	text-align: center;
+	margin-bottom: 0%;
+	margin-top: 50px;
+	color: var(--preto);
+	width: 100%;
+	height: 50px;
+	font-size: calc(20px + 2vmin);
+}
+
+.FormularioUsuario {
+	position: relative;
+	width: 600px;
+	left: 0px;
+
+	float: left;
+
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.formularioLargo {
+	border-radius: 30px;
+	margin: 2%;
+	height: 40px;
+	width: 450px;
+	padding-left: 20px;
+}
+.formularioCurto {
+	border-radius: 30px;
+	margin: 2%;
+	height: 40px;
+	width: 215px;
+	padding-left: 20px;
+}
+
+.PainelBuscarUsuario {
+	top: 10%;
+	display: block;
+	position: relative;
+	width: 600px;
+	height: 300px;
+	margin: 10px;
+	border-radius: 30px;
+	background-color: var(--amarelo);
+}
+
+.PainelUsuarioBuscado {
+	width: 600px;
+	height: 200px;
+	border-radius: 30px;
+	background-color: var(--amarelo);
+}
+
 /* FIM USUÁRIOS */

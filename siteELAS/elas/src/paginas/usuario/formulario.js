@@ -1,33 +1,58 @@
 import React from 'react';
 import '../../estilo/App.css';
-import {BotaoInicial} from '../../estilo/estilos.js';
+import { BotaoVerde, BotaoRosa} from '../../estilo/estilos.js';
 
 
 export default props => {
   return (
-    <div className="Logo-direita">
-        <div className="Login">
-            <div className='Formulario'>
-                <form onSubmit={props.handleSubmit}>
+    <div className="FormularioUsuario">
+        <div className='Formul ario'>
+        
+            <input className='formularioLargo' type="text" 
+                placeholder='Nome:'
+                onChange={props.mudaNome}
+                value={props.nome}>
+            </input>
 
-                    <input id='nome' type="text" 
-                        placeholder='Nome:'
-                        onChange={props.handleChangeName}
-                        value={props.name}></input>
-                    
-                    <input id='senha' type="password"
-                        placeholder='Senha:'
-                        onChange={props.handleChangeSenha}
-                        value={props.senha}></input>
-                
-                    <BotaoInicial type="submit" value="Submit">ENTRAR</BotaoInicial>
-                    <hr />
-                </form>
+            <input className='formularioLargo' type="text" 
+                placeholder='Endereço:'
+                onChange={props.mudaEndereco}
+                value={props.rua}>
+            </input>
 
-            </div>
+            <input className='formularioCurto' type="text" 
+                placeholder='Número:'
+                onChange={props.mudaNumero}
+                value={props.numero}>
+            </input>
+
+            <input className='formularioCurto' type="text" 
+                placeholder='CEP:'
+                onChange={props.mudaCep}
+                value={props.cep}>
+            </input>
+
+            <input className='formularioLargo' type="text" 
+                placeholder='Telefone:'
+                onChange={props.mudaTelefone}
+                value={props.telefone}>
+            </input>
+
+            <input className='formularioCurto' type="text" 
+                placeholder='Login:'
+                onChange={props.mudaLogin}
+                value={props.login}>
+            </input>
+            
+            <input className='formularioCurto' type="password"
+                placeholder='Senha:'
+                onChange={props.mudaSenha}
+                value={props.senha}></input>
+        
+            <BotaoRosa onClick={props.cancelar}>{props.rosa}</BotaoRosa>
+            <BotaoVerde onClick={props.inserirUsuario}>{props.verde}</BotaoVerde>
         </div>
-
     </div>
-  );
+    );
 }
 

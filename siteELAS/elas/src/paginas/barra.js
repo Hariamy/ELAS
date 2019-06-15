@@ -19,11 +19,11 @@ export default props => {
 				
 			</div>
 			<div className="lista config-top">
-				<a href='#/solicitar'>	<div className={solicitar}>Empréstimos Solicitados</div></a>
-				<a href='#/emprestimo'>	<div className={emprestimo}>Novo Empréstimo</div></a>
-				<a href='#/usuario'>	<div className={usuario}>Usuários</div></a>
-				<a href='#/livro'>		<div className={livro}>Livros</div></a>
-				<a href='#/configurar'>	<div className={configurar}>Configurações</div></a>
+				<a href='/solicitar'>	<div className={solicitar}>Empréstimos Solicitados</div></a>
+				<a href='/emprestimo'>	<div className={emprestimo}>Novo Empréstimo</div></a>
+				<a href='/usuario'>	<div className={usuario}>Usuários</div></a>
+				<a href='/livro'>		<div className={livro}>Livros</div></a>
+				<a href='/configurar'>	<div className={configurar}>Configurações</div></a>
 			</div>
 			
 		</div>

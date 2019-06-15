@@ -8,19 +8,19 @@ export default props => {
            
             <div className="Info">
                 <p className="Informacoes">Usuário: &nbsp;</p>
-                    <p> Hariamy</p>
+                    <p> {props.nome}</p>
                 <p className="Informacoes">Pendências: &nbsp;</p>
-                    <p>Nenhuma</p>
+                    <p>{props.pendencias}</p>
                 <p className="Informacoes">Títulos Solicitados: &nbsp;</p>
-                    <p>Construção e análise de algoritmos</p>
+                    <p>{props.titulo}</p>
             </div>
 
             <div className="Confirmar">
                 <div className="BotaoConfirmar">
-                   <BotaoVerde type="submit" value="Submit">CONFIRMAR</BotaoVerde>
+                   <BotaoVerde >CONFIRMAR</BotaoVerde>
                 </div>
                 <div className="BotaoConfirmar">
-                    <BotaoRosa type="submit" value="Submit">GUICHÊ</BotaoRosa>
+                    <BotaoRosa >GUICHÊ</BotaoRosa>
                 </div>
             </div>
 		</div>
