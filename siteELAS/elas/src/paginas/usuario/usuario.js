@@ -30,9 +30,22 @@ class Usuario extends Component {
 	}
 
 	inserir() {
+
 		this.setState({
+			nome: '',
+			endereco: '',
+			numero: '',
+			cep: '',
+			telefone: '',
+			login: '',
+			senha: '',
+			loginBusca: '',
+			id: '',
+
 			inserir: true,
 			buscar: false,
+			buscaRealizada: false,
+			editar: false
 		})
 	}
 
@@ -116,32 +129,6 @@ class Usuario extends Component {
 				buscaRealizada: false
 			})
 		}
-	}
-
-	editaNome(e) { 
-		const aux = this.state.resultBusca[0];
-		aux.nome = e.target.value;
-		this.setState({ resultBusca: [aux] }) 
-	}
-	editaEndereco(e) { 
-		const aux = this.state.resultBusca[0];
-		aux.rua = e.target.value;
-		this.setState({ resultBusca: [aux] }) 
-	}
-	editaNumero(e) { 
-		const aux = this.state.resultBusca[0];
-		aux.numero = e.target.value;
-		this.setState({ resultBusca: [aux] }) 
-	}
-	editaCep(e) { 
-		const aux = this.state.resultBusca[0];
-		aux.cep = e.target.value;
-		this.setState({ resultBusca: [aux] }) 
-	}
-	editaTelefone(e) { 
-		const aux = this.state.resultBusca[0];
-		aux.telefone = e.target.value;
-		this.setState({ resultBusca: [aux] }) 
 	}
 
 	excluirUsuario = async () => {

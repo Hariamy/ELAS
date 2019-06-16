@@ -3,7 +3,7 @@ import '../../estilo/App.css';
 
 import Formulario from './formulario';
 import Logo from './logo';
-import { getUsers, getUser } from '../../conexaoApi/funcoesApi';
+import { getUsers, getUser, getAdm } from '../../conexaoApi/funcoesApi';
 import { autenticacao } from '../../conexaoApi/funcoesApi'
 
 import { Redirect } from 'react-router-dom'
@@ -47,7 +47,7 @@ class Login extends Component {
 
 		const body = await response.json();
 		if (response.status !== 200) throw Error(body.message);
-		console.log()
+	
 		return body.docs;
 	};
 
@@ -65,7 +65,7 @@ class Login extends Component {
 
 		const body = await response.json();
 		if (response.status !== 200) throw Error(body.message);
-		console.log()
+	
 		return body.docs;
 	};
 
@@ -89,19 +89,29 @@ class Login extends Component {
     }
 
     async loginSubmit(e) {
-		await autenticacao.autenticar(this.state.usuario, this.state.senha);
-		console.log(autenticacao.getStatus())
-		this.setState({ 
-			senha: this.state.senha,
-			response: this.state.response,
-			botaoLogin: true,
-			usuario: this.state.usuario,
-		})
+		const response = await fetch(getAdm+this.state.usuario);
+        const body = await response.json();
+
+        if (body !== null) {
+            if (await body.senha === this.state.senha) {
+				autenticacao.setAutenticado();
+				this.setState({ 
+					senha: this.state.senha,
+					response: this.state.response,
+					botaoLogin: true,
+					usuario: this.state.usuario,
+				})
+            } else {
+				alert("Erro ao logar! Senha incorreta.")
+            }
+        }
+        else {
+            alert("Erro ao logar! Login incorreto.")
+		}
 	}
 	
-
 	render() {
-		if (autenticacao.getStatus() && this.state.botaoLogin) return <Redirect from='/login' to ='/solicitar'/>
+		if (autenticacao.getStatusAut() && this.state.botaoLogin) return <Redirect from='/login' to ='/solicitar'/>
 		return (
 			<div className="Inicio">
 				<Logo/>

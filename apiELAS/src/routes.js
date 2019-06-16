@@ -4,6 +4,7 @@ const routes = express.Router();
 const UsuarioController = require('./controllers/UsuarioController');
 const LivroController = require('./controllers/LivroController');
 const SolicitacaoController = require('./controllers/SolicitacaoController');
+const AdministradorController = require('./controllers/AdministradorController');
 
 
 // Rotas
@@ -27,6 +28,13 @@ routes.get('/solicitacao/login/:login', SolicitacaoController.showLogin);
 routes.post('/solicitacao', SolicitacaoController.store);
 routes.put('/solicitacao/:id', SolicitacaoController.update);
 routes.delete('/solicitacao/:id', SolicitacaoController.destroy);
+
+routes.get('/administradores', AdministradorController.index);
+routes.get('/administradores/:id', AdministradorController.show);
+routes.get('/administradores/login/:login', AdministradorController.showLogin);
+routes.post('/administradores', AdministradorController.store);
+routes.put('/administradores/:id', AdministradorController.update);
+routes.delete('/administradores/:id', AdministradorController.destroy);
 
 
 module.exports = routes;
